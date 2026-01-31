@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="现代化的PDF文档合并工具，支持拖拽上传和文件排序">
+    <title>PDF 合并工具 - 简单高效的文档合并</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                    PDF 合并工具
+                </h1>
+                <p class="subtitle">快速合并多个PDF文档，支持拖拽排序</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Area -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="17 8 12 3 7 8" />
+                            <line x1="12" y1="3" x2="12" y2="15" />
+                        </svg>
+                    </div>
+                    <h2 class="upload-title">拖拽PDF文件到此处</h2>
+                    <p class="upload-text">或点击选择文件</p>
+                    <input type="file" id="fileInput" accept=".pdf" multiple hidden>
+                    <button class="btn btn-primary" id="selectBtn">选择PDF文件</button>
+                </div>
+            </section>
+
+            <!-- File List -->
+            <section class="file-list-section" id="fileListSection">
+                <div class="section-header">
+                    <h3 class="section-title">已添加的文件</h3>
+                    <button class="btn btn-secondary btn-small" id="clearBtn">清空列表</button>
+                </div>
+                <div class="file-list" id="fileList">
+                    <!-- Files will be added here dynamically -->
+                </div>
+                <div class="hint-text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                    提示：拖拽文件卡片可以重新排序
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="action-section" id="actionSection">
+                <button class="btn btn-large btn-merge" id="mergeBtn" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                    <span>合并/保存PDF</span>
+                </button>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">正在合并...</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>所有操作均在浏览器本地完成，文件不会上传到服务器</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span class="toast-message" id="toastMessage">操作成功</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
