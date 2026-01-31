@@ -28,7 +28,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/pdf-merger.git
+git clone https://github.com/zhongduowang/pdf-merger.git
 cd pdf-merger
 
 # 使用Python启动本地服务器
@@ -106,7 +106,7 @@ pdf-merger/
 
 ### 👨‍💻 作者
 
-您的名字 - [@yourhandle](https://github.com/YOUR_USERNAME)
+zhongduowang - (https://github.com/zhongduowang)
 
 ---
 
@@ -134,7 +134,7 @@ Simply open the `index.html` file in your browser.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/pdf-merger.git
+git clone https://github.com/zhongduowang/pdf-merger.git
 cd pdf-merger
 
 # Start local server with Python
@@ -204,7 +204,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 👨‍💻 Author
 
-Your Name - [@yourhandle](https://github.com/YOUR_USERNAME)
+zhongduowang (https://github.com/zhongduowang)
 
 ---
 
